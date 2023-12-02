@@ -90,8 +90,9 @@ def studiosChange(id):
                     result.append(animation)
         js = json.dumps(result)
         resp = Response(js, status=200, mimetype='application/json')
-        message = {
+        message2 = {
             'status': 200,
-            'message': f"Studio was changed successfully for: {studio}"
+            'message': f'Studio changed successfully for: {studio}'
         }
-    return message, resp
+        resp2 = jsonify(message2)
+    return resp2
