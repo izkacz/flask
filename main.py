@@ -37,12 +37,10 @@ def tytuly():
 def ids(id):
     if (int(id) <= 5):
         with open('animations.json') as jsonData:
-            result = []
             data = json.load(jsonData)
             for animation in data['animations']:
                 if id == str(animation['ID']):
-                    result.append(animation)
-        js = json.dumps(result)
+                    js = json.dumps(animation)
         resp = Response(js, status=200, mimetype='application/json')
     else:
         message = {
